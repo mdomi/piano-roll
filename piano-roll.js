@@ -97,12 +97,16 @@
 
     function noteOn(pianoRoll, data) {
         var key = getKey(pianoRoll, data[1]);
-        key.classList.add('active');
+        if (key) {
+            key.classList.add('active');
+        }
     }
 
     function noteOff(pianoRoll, data) {
         var key = getKey(pianoRoll, data[1]);
-        key.classList.remove('active');
+        if (key) {
+            key.classList.remove('active');
+        }
     }
 
     function indexOf(array, value) {
@@ -119,8 +123,14 @@
         });
     }
 
-    function addEventListener(pianoRoll, event, callback) {
-        pianoRoll.element.addEventListener(event, callback.bind(pianoRoll));
+    function addEventListener(pianoRoll, eventName, callback) {
+        var attachedCallback = callback.bind(pianoRoll);
+        pianoRoll.element.addEventListener(eventName, attachedCallback);
+        pianoRoll._cleanups = (pianoRoll._cleanups || []).concat([
+            function () {
+                pianoRoll.element.removeEventListener(eventName, attachedCallback);
+            }
+        ]);
     }
 
     function PianoRoll(element, options) {
@@ -241,7 +251,16 @@
                 });
             }
         },
-        clear : function () {}
+        clear : function () {},
+        destroy : function () {
+            (this._cleanups || []).forEach(function (cleanup) {
+                cleanup();
+            });
+            this.keys = [];
+            this.blackKeys = [];
+            this.whiteKeys = [];
+            this.element.removeChild(this.svg);
+        }
     };
 
     window.PianoRoll = PianoRoll;
