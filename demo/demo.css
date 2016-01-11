@@ -1,0 +1,13 @@
+.piano-roll .piano-roll-key {
+    stroke: black;
+    strokeWidth : 1px;
+}
+.piano-roll .piano-roll-white-key {
+    fill: white;
+}
+.piano-roll .piano-roll-black-key {
+    fill: black;
+}
+.piano-roll .piano-roll-key.active {
+    fill: blue;
+}

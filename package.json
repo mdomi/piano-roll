@@ -1,0 +1,32 @@
+{
+  "name": "piano-roll",
+  "version": "0.1.0",
+  "description": "Piano Roll MIDI Component",
+  "author": "Mike Dominice <mike@mikedominice.com>",
+  "keywords": [
+    "piano",
+    "midi",
+    "keyboard"
+  ],
+  "main": "./piano-roll.js",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdomi/piano-roll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mdomi/piano-roll/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "load-grunt-tasks": "latest"
+  }
+}
