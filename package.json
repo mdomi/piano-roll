@@ -20,7 +20,7 @@
     "url": "https://github.com/mdomi/piano-roll/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "license": "MIT",
   "devDependencies": {
