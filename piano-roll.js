@@ -1,5 +1,5 @@
 //! piano-roll.js
-//! version : 0.1.0
+//! version : 0.2.0
 //! author : Mike Dominice <mike@mikedominice.com>
 //! license : MIT
 //! github.com/mdomi/piano-roll

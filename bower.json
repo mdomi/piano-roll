@@ -1,5 +1,6 @@
 {
   "name": "piano-roll",
+  "version": "0.2.0",
   "main": "piano-roll.js",
   "authors": [
     "Mike Dominice <mike@mikedominice.com>"
