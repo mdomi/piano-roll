@@ -1,5 +1,5 @@
 /* jshint browser: true */
-(function (document, MIDIKeys, PianoRoll) {
+(function (window, document, MIDIKeys, PianoRoll) {
     'use strict';
 
     var pianoRoll = new PianoRoll(document.getElementById('piano-roll-1'), {
@@ -15,4 +15,6 @@
         pianoRoll.send(e.data, e.timestamp);
     });
 
-}(window.document, window.MIDIKeys, window.PianoRoll));
+    window.pianoRoll = pianoRoll;
+
+}(window, window.document, window.MIDIKeys, window.PianoRoll));
